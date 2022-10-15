@@ -1,5 +1,5 @@
 import Sequelize from "sequelize"
-import sequelize from '../config/database'
+import sequelize from '../config/_database'
 
 
 const Models = sequelize.define('Frutas', {
@@ -20,12 +20,12 @@ const Models = sequelize.define('Frutas', {
         type: Sequelize.STRING,
         required: true
     },
-    nutritions: {
-        carboidratos:{
+      nutritions: {
+        carboidratos: {
             type: Sequelize.INTEGER,
             required: true
         },
-        proteína:{
+        proteina:{
             type: Sequelize.INTEGER,
             required: true
         },
@@ -37,7 +37,7 @@ const Models = sequelize.define('Frutas', {
             type: Sequelize.INTEGER,
             required: true
         },
-        açúcar:{
+        acucar:{
             type: Sequelize.INTEGER,
             required: true
         },
