@@ -20,7 +20,7 @@ const Models = sequelize.define('Frutas', {
         type: Sequelize.STRING,
         required: true
     },
-      nutritions: {
+      nutritions: { type: Sequelize.JSON,
         carboidratos: {
             type: Sequelize.INTEGER,
             required: true
