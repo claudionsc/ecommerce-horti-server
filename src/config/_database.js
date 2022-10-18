@@ -1,10 +1,7 @@
-// import dotenv from 'dotenv'
-// import "dotenv/config.js";
-import Sequelize from 'sequelize'
-import { config } from "dotenv";
-        config({ path: process.ENV })
+require('dotenv').config()
 
-// dotenv.config()
+const Sequelize = require('sequelize')
+
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialectOptions: {

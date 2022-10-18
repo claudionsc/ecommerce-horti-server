@@ -1,12 +1,14 @@
-import Models from '../models/Models'
-import Express from 'express'
-import cors from 'cors'
+const Models = require('../models/Models')
+const Express = require('express')
+const cors = require('cors')
+
 
 
 const app = Express()
 
 
 app.use(cors())
+
 
 const userRoute = (app) => {
 

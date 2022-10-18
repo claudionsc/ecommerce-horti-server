@@ -1,5 +1,5 @@
-import Sequelize from "sequelize"
-import sequelize from '../config/_database'
+const Sequelize = require ("sequelize")
+const sequelize = require ('../config/_database')
 
 
 const Models = sequelize.define('Frutas', {
@@ -52,4 +52,4 @@ const init = async () => {
 init()
 
 
-export default Models
+module.exports = Models

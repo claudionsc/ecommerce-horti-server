@@ -1,11 +1,11 @@
-import Express from 'express'
-import bodyParser from 'body-parser'
-// import database from "./config/_database";
-import userRoute from './routes/userRoute'
-// import 'dotenv/config.js'
-import cors from 'cors'
-import { config } from "dotenv";
-        config({ path: process.ENV })
+require("dotenv").config()
+
+const Express = require('express')
+const bodyParser = require('body-parser')
+const userRoute = require('./routes/userRoute')
+
+var cors = require('cors')
+
 
 
 const app = Express()

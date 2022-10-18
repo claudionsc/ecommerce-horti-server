@@ -1,8 +1,8 @@
-import sequelize from '../../src/config/_database'
+const sequelize = require('../../src/config/_database')
 
 const models = {
     cursos: require('./Models'),
     sequelize: sequelize
 }
 
-export default models
+module.exports = models
