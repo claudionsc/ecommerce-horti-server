@@ -12,8 +12,8 @@ app.use(cors())
 
 const userRoute = (app) => {
 
-    app.route('/')
-        .get('frutas/', async (req, res) => {
+    app.route('/frutas/:id?')
+        .get(async (req, res) => {
             const { id } = req.params
             const query = {};
 
@@ -29,7 +29,7 @@ const userRoute = (app) => {
                 res.status(400).send({ error: 'Falha ao encontrar fruta'})
             }
         })
-        .post('frutas/', async (req, res) => {
+        .post(async (req, res) => {
             try {
                 const frutas = new Models(req.body)
                 await frutas.save()
@@ -39,7 +39,7 @@ const userRoute = (app) => {
                 res.send(error)
             }
         })
-        .put('frutas/:uuid', async (req, res) => {
+        .put(async (req, res) => {
             const { id } = req.params
 
             if(!id) {
@@ -62,7 +62,7 @@ const userRoute = (app) => {
                 res.send(error)
             }
             })
-            .delete('frutas/:uuid', async (req, res) => {
+            .delete(async (req, res) => {
             const { id } = req.params
 
             if(!id) {
