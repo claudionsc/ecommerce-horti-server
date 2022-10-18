@@ -2,6 +2,7 @@ import Express from 'express'
 import bodyParser from 'body-parser'
 // import database from "./config/_database";
 import userRoute from './routes/userRoute'
+import 'dotenv/config.js'
 import cors from 'cors'
 
 
