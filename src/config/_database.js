@@ -1,6 +1,8 @@
 // import dotenv from 'dotenv'
-import "dotenv/config.js";
+// import "dotenv/config.js";
 import Sequelize from 'sequelize'
+import { config } from "dotenv";
+        config({ path: process.ENV })
 
 // dotenv.config()
 
