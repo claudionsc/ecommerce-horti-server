@@ -1,6 +1,6 @@
 import Express from 'express'
 import bodyParser from 'body-parser'
-import database from "./config/_database";
+// import database from "./config/_database";
 import userRoute from './routes/userRoute'
 import cors from 'cors'
 
@@ -14,7 +14,7 @@ const name = process.env.DB_NAME
 const user = process.env.DB_USER 
 const password = process.env.DB_PASSWORD
 
-const port = process.env.DB_PORT || 5000
+const port = process.env.PORT || 5000
 
 
 app.use(bodyParser.urlencoded({ extended: false }))

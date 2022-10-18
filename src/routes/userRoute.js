@@ -9,72 +9,75 @@ const app = Express()
 app.use(cors())
 
 const userRoute = (app) => {
-    app.route('frutas/:id?')
-    .get(async (req, res) => {
-        const { id } = req.params
-        const query = {}
-        if (id) {
-            query._id = id
-        }
 
-        try {
-            const frutas = await Models.find(query)
-            res.send({ frutas })
-        } catch (error){
-            res.status(400).send({ error: 'Falha ao encontrar fruta'})
-        }
-    })
-    .post(async (req, res) => {
-        try {
-            const frutas = new Models(req.body)
-            await frutas.save()
-            res.status(201).send('POST')
-        }catch(error){
-            res.send(error)
-        }
-    })
-    .put(async (req, res) => {
-        const { id } = req.params
+    app.route('/frutas/:id?')
+        .get(async (req, res) => {
+            const { id } = req.params
+            const query = {};
 
-        if(!id) {
-            return res.status(400).send({ error: 'ID não encontrado'})
-        }
-         try {
-            const updateFruta = await Models.findOneAndUpdate({ _id: id }, req.body, {
-                new: true,
-            });
-
-            console.log(updateFruta)
-
-            if(updateFruta) {
-                return res.status(200).send('OK!')
+            if (id) {
+                query._id = id
             }
 
-            res.status(400).send({ error: 'Não é possível atualizar a fruta'})
-
-         } catch (error) {
-            res.send(error)
-         }
+            try {
+                const frutas = await Models.find(query)
+                res.send({ frutas })
+            } catch (error){
+                res.status(400).send({ error: 'Falha ao encontrar fruta'})
+            }
         })
-        .delete(async (req, res) => {
-           const { id } = req.params
+        .post(async (req, res) => {
+            try {
+                const frutas = new Models(req.body)
+                await frutas.save()
 
-           if(!id) {
+                res.status(201).send('POST')
+            }catch(error){
+                res.send(error)
+            }
+        })
+        .put(async (req, res) => {
+            const { id } = req.params
+
+            if(!id) {
                 return res.status(400).send({ error: 'ID não encontrado'})
-           }
+            }
+            try {
+                const updateFruta = await Models.findOneAndUpdate({ _id: id }, req.body, {
+                    new: true,
+                });
 
-           try {
-            const deleteFruta = await Models.deleteOne({ _id: id })
-            if (deleteFruta.deletedCount) {
-                return res.send('Deletado')
+                console.log(updateFruta)
 
+                if(updateFruta) {
+                    return res.status(200).send('OK!')
+                }
+
+                res.status(400).send({ error: 'Não é possível atualizar a fruta'})
+
+            } catch (error) {
+                res.send(error)
+            }
+            })
+            .delete(async (req, res) => {
+            const { id } = req.params
+
+            if(!id) {
+                    return res.status(400).send({ error: 'ID não encontrado'})
             }
 
-            res.status(400).send({ error: 'Não foi possível deletar fruta' })
+            try {
+                const deleteFruta = await Models.deleteOne({ _id: id })
+                if (deleteFruta.deletedCount) {
+                    return res.send('Deletado')
 
-           } catch (error) {
-            res.send(error)
-           }
+                }
+
+                res.status(400).send({ error: 'Não foi possível deletar fruta' })
+
+            } catch (error) {
+                res.send(error)
+            }
     })
 }
 
