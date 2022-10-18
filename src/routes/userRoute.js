@@ -22,8 +22,9 @@ const userRoute = (app) => {
             }
 
             try {
-                const frutas = await Models.find(query)
+                const frutas = await Models.findAll(query)
                 res.send({ frutas })
+                
             } catch (error){
                 res.status(400).send({ error: 'Falha ao encontrar fruta'})
             }
