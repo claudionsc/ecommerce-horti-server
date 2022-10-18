@@ -7,3 +7,6 @@ https://www.youtube.com/watch?v=SPUGoDSKk14
 Rotas - https://www.youtube.com/watch?v=Yey6nTwqUok&list=PLOzZAH_pgb_QGWVmQwkRFTYhHuG1qKHIR&index=4
 
 Navbar - https://www.youtube.com/watch?v=fL8cFqhTHwA
+
+    // "start": "nodemon --exec babel-node ./src/index.js ",
+https://medium.com/@kimtnguyen/how-to-deploy-es6-node-js-express-back-end-to-heroku-7e6743e8d2ff
