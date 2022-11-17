@@ -1,7 +1,8 @@
 const sequelize = require('../../src/config/_database')
 
 const models = {
-    cursos: require('./Models'),
+    frutas: require('./FrutasModels'),
+    nutritions: require('./NutritionsModels'),
     sequelize: sequelize
 }
 

@@ -1,4 +1,4 @@
-const Models = require('../models/Models')
+const Models = require('../models/FrutasModels')
 const Express = require('express')
 const cors = require('cors')
 
@@ -63,7 +63,7 @@ const userRoute = (app) => {
             }
             })
             .delete(async (req, res) => {
-            const { id } = req.params
+            const id = req.params.id
 
             if(!id) {
                     return res.status(400).send({ error: 'ID não encontrado'})

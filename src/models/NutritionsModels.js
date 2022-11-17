@@ -2,25 +2,8 @@ const Sequelize = require ("sequelize")
 const sequelize = require ('../config/_database')
 
 
-const Models = sequelize.define('Frutas', {
-    genero: {
-        type: Sequelize.STRING,
-        required: true
-    },
-    nome: {
-        type: Sequelize.STRING,
-        required: true,
-        unique: true
-    },
-    familia: {
-        type: Sequelize.STRING,
-        required: true
-    },
-    ordem: {
-        type: Sequelize.STRING,
-        required: true
-    },
-      nutritions: { type: Sequelize.JSON,
+const NutritionsModels = sequelize.define('Nutritions', {
+   
         carboidratos: {
             type: Sequelize.INTEGER,
             required: true
@@ -40,16 +23,19 @@ const Models = sequelize.define('Frutas', {
         acucar:{
             type: Sequelize.INTEGER,
             required: true
-        },
-    }
+        }
+    },
 
-})
+)
 
 const init = async () => {
-    await Models.sync()
+    await NutritionsModels.sync()
 }
 
 init()
 
 
-module.exports = Models
+module.exports = NutritionsModels
+
+const FrutasModels = require('./FrutasModels')
+NutritionsModels.belongsToMany(FrutasModels, {through: 'frutas_nutritions'})
