@@ -17,7 +17,7 @@
     "express": "^4.17.0",
     "heroku-run-log-tails": "^3.5.10",
     "pg": "^8.8.0",
-    "sequelize": "^6.25.1"
+    "sequelize": "^6.21.6"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
