@@ -3,11 +3,10 @@ require('dotenv').config({ path: path.resolve(__dirname, '../../.env') })
 
 const Sequelize = require('sequelize')
 
-const connectionString = process.env.DATABASE_URL
 const dbPort = process.env.DB_PORT
 
 const sequelize = new Sequelize(
- connectionString, 
+  process.env.DATABASE_URL, 
   
   {
     dialect: "mysql",
