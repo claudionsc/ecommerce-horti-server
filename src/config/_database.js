@@ -1,29 +1,39 @@
-require('dotenv').config()
+const path = require('path')
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') })
 
 const Sequelize = require('sequelize')
 
+const connectionString = process.env.DATABASE_URL
+const dbPort = process.env.DB_PORT
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-  dialectOptions: {
-    ssl: {
-      rejectUnauthorized: false
+const sequelize = new Sequelize(
+ connectionString, 
+  
+  {
+    dialect: "mysql",
+    port: dbPort,
+    dialectOptions: {
+      ssl: {
+        required: true,
+        rejectUnauthorized: true
+
+      },
     }
-  }
-})
+  })
 
 module.exports = sequelize
 
 // Test DB Conenction //
-async function test(){
-    try{
-        let result = await sequelize.authenticate()
-        console.log("--->SUCESSO<---")
-    }
-    catch(error){
-        console.error("------->FALHA: ")
-        console.error(error)
-        process.exit()
-    }
+async function test() {
+  try {
+    let result = await sequelize.authenticate()
+    console.log("--->SUCESSO<---")
   }
+  catch (error) {
+    console.error("------->FALHA: ")
+    console.error(error)
+    process.exit()
+  }
+}
 
-  test()
+test()
