@@ -1,0 +1,14 @@
+version: '3'
+services:
+  database:
+    image: postgres:10.17
+    environment:
+      - "POSTGRES_USER=postgres"
+      - "POSTGRES_PASSWORD=admin"
+      - "POSTGRES_DB=horti"
+    ports:
+     - 5441:5432
+    volumes:
+      - ./data/pg:/var/lib/postgresql/data
+volumes:
+  pg-data:

@@ -15,7 +15,8 @@ app.use(cors())
 
 
 
-const port = process.env.DB_PORT || 5000
+// const port = process.env.DB_PORT || 5000
+const port =  5000
 
 
 app.use(bodyParser.urlencoded({ extended: false }))
