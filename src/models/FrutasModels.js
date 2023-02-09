@@ -35,5 +35,3 @@ init()
 
 module.exports = FrutasModels
 
-const NutritionsModels = require('./NutritionsModels')
-FrutasModels.belongsToMany(NutritionsModels, {through: 'frutas_nutritions'})

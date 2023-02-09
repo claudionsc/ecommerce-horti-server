@@ -167,7 +167,7 @@ async function insert() {
         nome: "Ameixa",
         familia: "Rosaceae",
         ordem: "Rosales",
-        imagem: 'https://arcomixstr.blob.core.windows.net/product/8397-ameixa-fresca-importad-kg-g.jpg'
+        imagem: 'https://deskontao.agilecdn.com.br/3699_1.jpg'
     })
     const framboesa = await models.frutas.create({
         genero: "Rubus",
@@ -188,7 +188,7 @@ async function insert() {
         nome: "Tomate",
         familia: "Solanaceae",
         ordem: "Solanales   ",
-        imagem: 'https://hiperideal.vteximg.com.br/arquivos/ids/167668/30619.jpg?v=636615816174370000'
+        imagem: 'https://scfoods.fbitsstatic.net/img/p/tomate-debora-maduro-para-molho-500g-70892/257510.jpg?w=800&h=800&v=no-change&qs=ignore'
     })
     const umbu = await models.frutas.create({
         genero: "Spondias",

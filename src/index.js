@@ -1,6 +1,3 @@
-const path = require('path')
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
-
 
 const Express = require('express')
 const bodyParser = require('body-parser')
@@ -16,7 +13,6 @@ app.use(cors())
 
 
 const port = 5000
-// const port = process.env.DB_PORT || 5000
 
 
 app.use(bodyParser.urlencoded({ extended: false }))

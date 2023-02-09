@@ -1,23 +1,18 @@
-const path = require('path')
-require('dotenv').config({ path: path.resolve(__dirname, '../../.env') })
-
 const Sequelize = require('sequelize')
 
-const dbPort = process.env.DB_PORT
+const sequelize = new Sequelize({
+  dialect: 'postgres',
+  port: '5432',
+  host: 'localhost',
+  username: 'postgres',
+  password: 'admin',
+  logging: true,
+  define: {
+  timestaps: true,
+  underscored: true,
 
-const sequelize = new Sequelize(
-  process.env.DATABASE_URL, 
-  
-  {
-    port: dbPort,
-    dialectOptions: {
-      ssl: {
-        required: true,
-        rejectUnauthorized: true
-
-      },
-    }
-  })
+}},
+)
 
 module.exports = sequelize
 
