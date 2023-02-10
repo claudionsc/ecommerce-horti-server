@@ -56,4 +56,8 @@ Para exibir o json com as frutas, siga a rota 'http://localhost:5000/frutas' e s
 ### Nodemon
 ### Docker compose
 
+## Frontend
 
+Caso queira visualizar esse projeto no client-side, clone o repo do frontend e siga os passos indicados no arquivo README
+
+https://github.com/claudionsc/ecommerce-horti-client.git
