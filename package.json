@@ -15,7 +15,6 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.17.0",
-    "heroku-run-log-tails": "^3.5.10",
     "pg": "^8.8.0",
     "sequelize": "^6.21.6"
   },

@@ -1,5 +1,7 @@
 const Sequelize = require('sequelize')
 
+// VARIÁVEIS DE CONEXÃO
+
 const sequelize = new Sequelize({
   dialect: 'postgres',
   port: '5432',
