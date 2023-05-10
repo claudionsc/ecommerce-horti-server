@@ -19,12 +19,12 @@ Certifique-se de que o Docker Desktop está rodando antes de dar o comando. O do
 
 Para se conectar com o banco de dados criado pelo docker, dê os seguintes comandos:
 
-1 - node .\src\sequelize\1_create.js 
+1. `node .\src\sequelize\1_create.js`
 
 Este comando cria as tabelas definidas nos models e sicroniza a aplicação com o banco de dados, porém exclui todas as tabelas já existentes, caso existam. Caso não queira excluir as tabelas existentes, comente a linha
-' await models.sequelize.sync({force: true})' e descomente a linha '  // await models.sequelize.sync()'
+`await models.sequelize.sync({force: true})` e descomente a linha `// await models.sequelize.sync()`
 
-2 - node .\src\sequelize\2_insert.js
+2. `node .\src\sequelize\2_insert.js`
 
 Este comando insere os dados nas tabelas.
 
@@ -32,32 +32,34 @@ Este comando insere os dados nas tabelas.
 
 Dê o comando npm start para o servidor ficar disponível para as requisições. 
 Caso dê certo, o console exibirá os seguintes logs: 
-============>Api rodando na porta 5000
---->SUCESSO<---
+`============>Api rodando na porta 5000`
+<br>
+`--->SUCESSO<---`
 
 Caso haja erro, os logs serão exibidos:
-============>Api rodando na porta 5000
-------->FALHA: 
+`============>Api rodando na porta 5000`
+<br>
+`------->FALHA: `
 
 Caso apresente falha, o erro pode estar na conexão com o banco de dados. Observe as variáveis de conexão ou o arquivo docker-compose
 
 ### Fazendo requisições
 
-Com o projeto em funcionamento, você pode simular requisições GET com postman ou até pelo navegador com a rota http://localhost:5000. Este caminho exibirá o seguinte:
-'======>Conectado!'
+Com o projeto em funcionamento, você pode simular requisições GET com postman ou até pelo navegador com a rota `http://localhost:5000`. Este caminho exibirá o seguinte:
+`======>Conectado!`
 
-Para exibir o json com as frutas, siga a rota 'http://localhost:5000/frutas' e será exibida a lista de frutas criadas com o sequelize.
+Para exibir o json com as frutas, siga a rota `http://localhost:5000/frutas` e será exibida a lista de frutas criadas com o sequelize.
 
 ## Neste projeto
 
-### Sequelize
-### Express
-### pg
-### Nodemon
-### Docker compose
+* Sequelize
+* Express
+* Postgres
+* Nodemon
+* Docker compose
 
 ## Frontend
 
 Caso queira visualizar esse projeto no client-side, clone o repo do frontend e siga os passos indicados no arquivo README
 
-https://github.com/claudionsc/ecommerce-horti-client.git
+[Ver repositório do frontend](https://github.com/claudionsc/ecommerce-horti-client.git)
