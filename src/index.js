@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 userRoute(app)
 
 app.get('/', (req, res) => res.send('======>Conectado!'))
-app.listen(port, () => console.log('============>Api rodando na porta 5000'))
+app.listen(port, () => console.log('============>Api rodando na nuvem'))
 
 
 
