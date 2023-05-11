@@ -9,22 +9,17 @@ const sequelize = new Sequelize(
   process.env.DATABASE_URL, 
   {
     dialect: "mysql",
-    name: process.env.DB_NAME,
     host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
 
     dialectOptions: {
       ssl: {
-        required: true,
-        rejectUnauthorized: false,
+        rejectUnauthorized: true
 
       },
     }
   })
 
-  console.log('Connected to Railway!')
+  console.log('Connected to PlanetScale!');
 
 
 module.exports = sequelize
