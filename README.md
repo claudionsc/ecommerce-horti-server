@@ -12,8 +12,8 @@ Clone o repositório do server (este mesmo) e instale todas as dependências com
 
 ### Docker
 
-Caso não tenha, faça o download do Docker Desktop. A seguir, abra o terminal na pasta do servidor e dê o comando docker-compose up.
-Certifique-se de que o Docker Desktop está rodando antes de dar o comando. O docker irá baixar a imagem do postgres criar um banco de dados chamado 'horti'.
+Caso não tenha, faça o download do Docker Desktop. A seguir, abra o terminal na pasta raiz do projeto e dê o comando `docker-compose up`.
+Certifique-se de que o Docker Desktop está rodando antes de dar o comando. O docker irá baixar a imagem do postgres e criar um banco de dados chamado 'horti'.
 
 ### Conectando e criando tabelas
 
@@ -30,7 +30,7 @@ Este comando insere os dados nas tabelas.
 
 ### Rodando o server
 
-Dê o comando npm start para o servidor ficar disponível para as requisições. 
+Dê o comando `npm start` para o servidor ficar disponível para as requisições. 
 Caso dê certo, o console exibirá os seguintes logs: 
 `============>Api rodando na porta 5000`
 <br>
@@ -42,6 +42,9 @@ Caso haja erro, os logs serão exibidos:
 `------->FALHA: `
 
 Caso apresente falha, o erro pode estar na conexão com o banco de dados. Observe as variáveis de conexão ou o arquivo docker-compose
+
+#### Obs: Você pode iniciar com o comando `npm start` e abrir outro terminal e executar o comando `node .\src\sequelize\2_insert.js`
+
 
 ### Fazendo requisições
 

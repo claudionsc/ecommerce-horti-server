@@ -36,6 +36,60 @@ const userRoute = (app) => {
                return res.status(400).send({ error: 'Falha ao encontrar fruta'})
             }
         })
+        .post(async (req, res) => {
+            try {
+                const frutas = new Models(req.body)
+                await frutas.save()
+
+                res.status(201).send('POST')
+            }catch(error){
+                res.send(error)
+            }
+        })
+        .put(async (req, res) => {
+            const { id } = req.params
+
+            if(!id) {
+                return res.status(400).send({ error: 'ID não encontrado'})
+            }
+            try {
+                const updateFruta = await Models.update(req.body, {
+                    where: { id: id }})
+
+                    
+                    if(updateFruta) {
+                        const updateFruta = await Models.findOne({ where: { id: id } });
+                        console.log(updateFruta)
+                        return res.status(200).send('OK!')
+                }
+
+                res.status(400).send({ error: 'Não é possível atualizar a fruta'})
+
+            } catch (error) {
+                res.send(error)
+            }
+            })
+            .delete(async (req, res) => {
+                const { id } = req.params
+
+            if(!id) {
+                    return res.status(400).send({ error: 'ID não encontrado'})
+            }
+
+            try {
+                const deleteFruta = await Models.destroy({
+                    where: { id: id }
+                })
+                if (deleteFruta) {
+                    return res.send('Deletado')
+                }
+
+                res.status(400).send({ error: 'Não foi possível deletar fruta' })
+
+            } catch (error) {
+                res.send(error)
+            }
+    })
         
 }
 
