@@ -43,7 +43,8 @@ const userRoute = (app) => {
 
                 res.status(201).send('POST')
             }catch(error){
-                res.send(error)
+                res.send('Não é permitido inserir dados nulos')
+                
             }
         })
         .put(async (req, res) => {
